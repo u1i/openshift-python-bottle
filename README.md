@@ -8,7 +8,22 @@ Sample App for running Python/Bottle on OpenShift
 
 `oc expose svc/openshift-python-bottle`
 
-## Access in minishift
+## Access the App
+
+Navigate to the overview in the OpenShift GUI - the URL should appear right next to the app. In Minishift you can also do this on the command line:
 
 `minishift openshift service openshift-python-bottle --in-browser`
 
+## Trigger a Build
+
+Get the 'Generic Webhook URL' from Builds >> openshift-python-bottle >> Configuration
+
+`curl -k -X POST <WEBHOOK_URL>`
+
+## Auto-Scale App
+
+`oc autoscale dc/openshift-python-bottle --min 3 --max 10`
+
+## Delete App
+
+`oc delete all -l app=old-app1`
