@@ -22,7 +22,14 @@ Get the 'Generic Webhook URL' from Builds >> openshift-python-bottle >> Configur
 
 ## Auto-Scale App
 
+Minimum 3 instances, maximum 10:
+
 `oc autoscale dc/openshift-python-bottle --min 3 --max 10`
+
+`oc get dc/openshift-python-bottle`
+
+`oc describe dc/openshift-python-bottle`
+
 
 ## Delete App
 
